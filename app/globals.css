@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0e131f;
+  --foreground: #ffffff;
+}
+
+html,
+body {
+  background-color: #0e131f;
+  color: #ffffff;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom selection */
+::selection {
+  background-color: #eab308;
+  color: #000000;
+}
+
+/* Celestial Animations */
+@keyframes sunRise {
+  0% {
+    transform: translateY(120vh) scale(0.85);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes moonRise {
+  0% {
+    transform: translateY(120vh) scale(0.85);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-350px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 350px));
+  }
+}
+
+@keyframes cloudDriftMedium {
+  0% {
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 250px));
+  }
+}
+
+@keyframes cloudDriftFast {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sunPulse {
+  0%, 100% {
+    box-shadow: 0 0 60px 25px rgba(251, 191, 36, 0.5), 0 0 120px 60px rgba(253, 224, 71, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 85px 35px rgba(251, 191, 36, 0.7), 0 0 150px 80px rgba(253, 224, 71, 0.5);
+  }
+}
+
+@keyframes moonPulse {
+  0%, 100% {
+    box-shadow: 0 0 45px 15px rgba(224, 231, 255, 0.35), 0 0 95px 40px rgba(165, 180, 252, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 65px 25px rgba(224, 231, 255, 0.5), 0 0 125px 55px rgba(165, 180, 252, 0.3);
+  }
+}
+
+@keyframes sunSet {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) scale(0.75);
+    opacity: 0.1;
+  }
+}
+
+@keyframes rainFall {
+  0% {
+    transform: translateY(-40px) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-25px);
+    opacity: 0;
+  }
+}
+
+/* Lightning screen flash and bolts */
+@keyframes lightningFlash {
+  0%, 88%, 91.5%, 95%, 100% {
+    opacity: 0;
+  }
+  89% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  92% {
+    opacity: 0.95;
+  }
+  93.5% {
+    opacity: 0.25;
+  }
+  94.5% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes lightningBoltA {
+  0%, 88%, 91.5%, 95%, 100% {
+    opacity: 0;
+    transform: scaleY(0.85);
+  }
+  89% {
+    opacity: 0.9;
+    transform: scaleY(1);
+  }
+  90% {
+    opacity: 0.15;
+    transform: scaleY(1);
+  }
+  92%, 93.5% {
+    opacity: 1;
+    transform: scaleY(1.02);
+  }
+  94.5% {
+    opacity: 0.5;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes lightningBoltB {
+  0%, 72%, 75.5%, 79%, 100% {
+    opacity: 0;
+    transform: scaleY(0.85);
+  }
+  73% {
+    opacity: 0.85;
+    transform: scaleY(1);
+  }
+  74% {
+    opacity: 0.1;
+    transform: scaleY(1);
+  }
+  76%, 77.5% {
+    opacity: 1;
+    transform: scaleY(1.02);
+  }
+  78.5% {
+    opacity: 0.45;
+    transform: scaleY(1);
+  }
+}
+
+/* Multi-direction, shifting shooting stars */
+@keyframes shootingStarLeft {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 0;
+  }
+  1.5% {
+    opacity: 1;
+  }
+  9% {
+    transform: rotate(215deg) translateX(-480px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-480px);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStarRight {
+  0% {
+    transform: rotate(35deg) translateX(0);
+    opacity: 0;
+  }
+  1.5% {
+    opacity: 1;
+  }
+  9% {
+    transform: rotate(35deg) translateX(460px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(35deg) translateX(460px);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStarSteep {
+  0% {
+    transform: rotate(230deg) translateX(0);
+    opacity: 0;
+  }
+  1.5% {
+    opacity: 1;
+  }
+  8% {
+    transform: rotate(230deg) translateX(-420px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(230deg) translateX(-420px);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStarGentle {
+  0% {
+    transform: rotate(42deg) translateX(0);
+    opacity: 0;
+  }
+  1.5% {
+    opacity: 1;
+  }
+  9% {
+    transform: rotate(42deg) translateX(500px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(42deg) translateX(500px);
+    opacity: 0;
+  }
+}
+
+.animate-lightning-flash {
+  animation: lightningFlash 3.6s ease-in-out infinite;
+}
+
+.animate-lightning-bolt-a {
+  animation: lightningBoltA 3.6s ease-in-out infinite;
+}
+
+.animate-lightning-bolt-b {
+  animation: lightningBoltB 4.6s ease-in-out -1.4s infinite;
+}
+
+.animate-shooting-star-1 {
+  animation: shootingStarLeft 12s linear infinite;
+}
+
+.animate-shooting-star-2 {
+  animation: shootingStarRight 13s linear -3.8s infinite;
+}
+
+.animate-shooting-star-3 {
+  animation: shootingStarSteep 11s linear -7.2s infinite;
+}
+
+.animate-shooting-star-4 {
+  animation: shootingStarGentle 14s linear -10.5s infinite;
+}
+
+.animate-sun-rise {
+  animation: sunRise 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-sun-set {
+  animation: sunSet 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-moon-rise {
+  animation: moonRise 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-sun-pulse {
+  animation: sunPulse 4s ease-in-out infinite;
+}
+
+.animate-moon-pulse {
+  animation: moonPulse 5s ease-in-out infinite;
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s infinite;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid #eab308;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for project view */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
